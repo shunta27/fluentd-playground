@@ -3,4 +3,5 @@
 .LSOverride
 
 fluentd-aggregator_1/log
+fluentd-aggregator_2/log
 fluentd-forwarder/log
