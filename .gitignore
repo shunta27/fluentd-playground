@@ -2,5 +2,5 @@
 .AppleDouble
 .LSOverride
 
-fluentd-collect_1/log
-fluentd-forward/log
+fluentd-aggregator_1/log
+fluentd-forwarder/log
