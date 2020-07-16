@@ -9,7 +9,7 @@ RUN apt-get -y update && \
   vim \
   curl
 
-RUN curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-trusty-td-agent2.sh | sh
+RUN curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-trusty-td-agent3.sh | sh
 
 # td-agent plugin
 RUN td-agent-gem install fluent-plugin-forest
