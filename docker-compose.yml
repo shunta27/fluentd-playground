@@ -1,0 +1,32 @@
+version: '2'
+
+services:
+  fluentd-collect_1:
+    build: ./fluentd-collect_1
+    container_name: collect_1
+    volumes:
+      - ./fluentd-collect_1/config:/etc/td-agent
+      - ./fluentd-collect_1/log:/var/log/td-agent
+    networks:
+      default:
+        ipv4_address: 172.30.0.10
+    restart: always
+
+  fluentd-forward:
+    build: ./fluentd-forward
+    container_name: forward
+    depends_on:
+      - fluentd-collect_1
+    volumes:
+      - ./fluentd-forward/config:/etc/td-agent
+      - ./fluentd-forward/log:/var/log/td-agent
+    restart: always
+
+networks:
+  default:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.30.0.0/24
+          gateway: 172.30.0.1
