@@ -1,3 +1,6 @@
 .DS_Store
 .AppleDouble
 .LSOverride
+
+fluentd-collect_1/log
+fluentd-forward/log
